@@ -154,10 +154,16 @@ else
                         end
                     end
                 end
+                p["ping"] = function(timeout)
+                    return ccssh.ping(id, timeout)
+                end
                 return p
             else
                 return nil
             end
+        else
+            print("No modem found!")
+            return nil
         end
     end
 
